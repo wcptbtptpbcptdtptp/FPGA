@@ -17,7 +17,7 @@ module DownSampler(	//input [7:0] din,
 			input clk,
 			input start,
 			input rst,
-			output [12:0] addr,  // send addr to imagebuffer to retrive data
+	                output [12:0] addr,  //  向图像缓冲区发送addr以检索数据
 			output finished
 			);
 // 7-1 , 10-2 is find the closest %2 number;
@@ -28,7 +28,7 @@ reg [7:0] r, c;
 reg [7:0] ro;
 reg [7:0] co;
  
-// only sample the even-th row and col
+// 只采样偶数行和列的像素值
 //assign valid = (start) && (r<row)&&(r%2==0) && (c<col)&&(c%2==0);
 assign valid_r = (start) && (r<row)&&(r%2==0);
 assign valid_c = (start) && (c<col)&&(c%2==0);
